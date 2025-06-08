@@ -6,7 +6,165 @@
   <title>CryptoPOW</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* ... CSS kamu tetap sama ... */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d0b1d;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      flex-grow: 1;
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .top-banner img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .crypto {
+      color: #ffffff;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
+    .pow {
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
+    }
+
+    .subtext {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .word {
+      position: relative;
+      opacity: 0;
+      animation: fadeWord 6s infinite;
+      animation-fill-mode: both;
+    }
+
+    .word:nth-child(1) { animation-delay: 0s; }
+    .word:nth-child(2) { animation-delay: 0.5s; }
+    .word:nth-child(3) { animation-delay: 1s; }
+    .word:nth-child(4) { animation-delay: 1.5s; }
+
+    @keyframes fadeWord {
+      0%, 20% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      25%, 45% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      80%, 100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+    .word a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .card {
+      background-color: #14122d;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .ad-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sponsored a img,
+    .view-btn a img {
+      height: 24px;
+      max-width: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .view-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .silver-button {
+      background-color: #555555;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .silver-button:hover {
+      background-color: #333333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .social-icons {
+      margin-bottom: 8px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 8px;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00f0ff;
+    }
   </style>
 </head>
 <body>
